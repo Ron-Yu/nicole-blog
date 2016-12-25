@@ -6,6 +6,7 @@
   "license": "MIT",
   "scripts": {
     "start": "nodemon --exec babel-node ./server.js",
+    "dev": "webpack-dashboard -- babel-node ./server.js",
     "lint": "eslint server/**; exit 0",
     "test": "xo"
   },
@@ -37,17 +38,18 @@
     "koa-webpack": "^0.1.10",
     "koa-webpack-middleware": "^1.0.3",
     "webpack": "^1.14.0",
+    "webpack-dashboard": "^0.2.0",
     "xo": "^0.17.1"
   },
   "xo": {
-		"extends": "xo-react",
+    "extends": "xo-react",
     "envs": [
       "node",
       "browser"
     ],
     "semicolon": false,
     "rules": {
-			"react/jsx-space-before-closing": 0
-		}
+      "react/jsx-space-before-closing": 0
+    }
   }
 }

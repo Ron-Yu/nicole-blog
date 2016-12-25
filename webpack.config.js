@@ -1,5 +1,6 @@
 import path from 'path'
 import webpack from 'webpack'
+import DashboardPlugin from 'webpack-dashboard/plugin'
 
 export default {
 	devtool: 'cheap-module-eval-source-map',
@@ -15,7 +16,8 @@ export default {
 	plugins: [
 		new webpack.optimize.OccurenceOrderPlugin(),
 		new webpack.HotModuleReplacementPlugin(),
-		new webpack.NoErrorsPlugin()
+		new webpack.NoErrorsPlugin(),
+		new DashboardPlugin()
 	],
 	module: {
 		loaders: [
