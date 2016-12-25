@@ -22,11 +22,12 @@ const app = new Koa()
 app.use(logger())
 app.use(bodyParser())
 app.use(serve('.'))
+app.use(combinedRouters)
+
 app.use(devMiddleware(compiler), {
 	noInfo: false,
 	publicPath: webpackConfig.output.publicPath
 })
 app.use(hotMiddleware(compiler))
-app.use(combinedRouters)
 
 app.listen(port)
