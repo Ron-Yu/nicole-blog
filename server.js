@@ -24,10 +24,9 @@ app.use(bodyParser())
 app.use(serve('.'))
 app.use(combinedRouters)
 
-app.use(devMiddleware(compiler), {
-	noInfo: false,
-	publicPath: webpackConfig.output.publicPath
-})
+app.use(devMiddleware(compiler, {
+	noInfo: true
+}))
 app.use(hotMiddleware(compiler))
 
 app.listen(port)
