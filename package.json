@@ -5,8 +5,7 @@
   "author": "Ron Yu <ronyu77@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "nodemon --exec babel-node ./server.js",
-    "dev": "webpack-dashboard -- babel-node ./server.js",
+    "start": "nodemon --exec webpack-dashboard babel-node ./server.js",
     "lint": "eslint server/**; exit 0",
     "test": "xo"
   },
