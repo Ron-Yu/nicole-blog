@@ -9,7 +9,8 @@ export default mongoose.model('Post', {
 	},
 	coverDesc: {
 		type: String,
-		trim: true
+		trim: true,
+		default: ''
 	},
 	coverImageUrl: {
 		type: String,
@@ -23,7 +24,8 @@ export default mongoose.model('Post', {
 		trim: true
 	},
 	contentImageUrl: {
-		type: [String]
+		type: [String],
+		default: []
 	},
 	contentBody: {
 		type: String,
@@ -32,7 +34,8 @@ export default mongoose.model('Post', {
 		trim: true
 	},
 	tag: {
-		type: [String]
+		type: [String],
+		default: []
 	},
 	published: {
 		type: Boolean,
