@@ -8,8 +8,10 @@ import convert from 'koa-convert'
 export default function combineRouters(...separatedRouters) {
 	const routers = Array.isArray(separatedRouters[0]) ? separatedRouters[0] : separatedRouters
 	const middleware = []
+	const PREFIX = '/api'
 
 	routers.forEach(router => {
+		router.prefix(PREFIX)
 		middleware.push(router.routes())
 		middleware.push(router.allowedMethods())
 	})
