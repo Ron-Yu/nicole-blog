@@ -5,11 +5,7 @@ import Post from '../models/post'
 const router = new Router()
 
 router.post('/posts', async ctx => {
-	const body = ctx.request.body
-
-	const post = new Post({
-		text: body.text
-	})
+	const post = new Post(ctx.request.body)
 
 	try {
 		const doc = await post.save()
@@ -55,7 +51,6 @@ router.get('/posts/:id', async ctx => {
 })
 
 router.patch('/posts/:id', async ctx => {
-	const {text} = ctx.request.body
 	const id = ctx.params.id
 
 	if (!ObjectId.isValid(id)) {
@@ -66,7 +61,7 @@ router.patch('/posts/:id', async ctx => {
 	try {
 		const post = await Post.findOneAndUpdate(
         {_id: id},
-        {$set: {text}},
+        {$set: {...ctx.request.body}},
         {new: true},
       )
 		if (!post) {
