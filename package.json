@@ -5,21 +5,26 @@
   "author": "Ron Yu <ronyu77@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "start": "nodemon --exec webpack-dashboard babel-node ./server.js",
+    "start": "nodemon --exec babel-node ./server.js",
     "lint": "eslint server/**; exit 0",
     "test": "xo"
   },
   "dependencies": {
+    "bcrypt": "^1.0.1",
+    "jsonwebtoken": "^7.2.1",
     "koa": "next",
     "koa-bodyparser": "next",
     "koa-convert": "^1.2.0",
     "koa-logger": "2",
+    "koa-onerror": "^3.0.1",
     "koa-router": "next",
     "koa-static": "next",
+    "lodash": "^4.17.3",
     "mongodb": "^2.2.16",
     "mongoose": "^4.7.4",
     "react": "^15.4.1",
     "react-dom": "^15.4.1",
+    "validator": "^6.2.0",
     "xo": "^0.17.1"
   },
   "devDependencies": {
@@ -48,7 +53,8 @@
     ],
     "semicolon": false,
     "rules": {
-      "react/jsx-space-before-closing": 0
+      "react/jsx-space-before-closing": 0,
+      "indent": 0
     }
   }
 }
