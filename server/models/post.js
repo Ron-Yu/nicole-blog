@@ -1,6 +1,6 @@
 import mongoose from 'mongoose'
 
-export default mongoose.model('Post', {
+const PostSchema = new mongoose.Schema({
 	coverTitle: {
 		type: String,
 		required: true,
@@ -50,3 +50,7 @@ export default mongoose.model('Post', {
 		default: null
 	}
 })
+
+const Post = mongoose.model('Post', PostSchema)
+
+export default Post
