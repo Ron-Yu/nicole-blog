@@ -1,5 +1,6 @@
 import Koa from 'koa'
 import logger from 'koa-logger'
+import onerror from 'koa-onerror'
 import bodyParser from 'koa-bodyparser'
 import serve from 'koa-static'
 import webpack from 'webpack'
@@ -18,6 +19,8 @@ const compiler = webpack(webpackConfig)
 const port = process.env.PORT || 3000
 
 const app = new Koa()
+
+onerror(app)
 
 app.use(logger())
 app.use(bodyParser())
