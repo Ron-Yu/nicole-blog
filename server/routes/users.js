@@ -47,7 +47,7 @@ router.post('/users/login', async ctx => {
 router.delete('/users/me/token', authenticate, async ctx => {
 	try {
 		console.log('yaya')
-		await ctx.state.user.removeToken(ctx.state.token)
+		await ctx.state.user.removeToken(ctx.state.token) // something wrong
 		console.log('yaya~~~~~~~~~~~~~~')
 		ctx.status = 200
 	} catch (err) {

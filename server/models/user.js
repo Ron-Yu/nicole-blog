@@ -60,7 +60,7 @@ UserSchema.methods.generateAuthToken = async function () {
 UserSchema.methods.removeToken = async function (token) {
 	const user = this
 
-	return user.update({
+	return await user.update({
 		$pull: {
 			tokens: {token}
 		}
